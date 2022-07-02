@@ -12,6 +12,7 @@ const TABLE_HEADERS = [
   "Ownership Percentage",
   "Implied Value",
   "Founded",
+  "Multiple",
 ];
 
 const Fund = () => {
@@ -31,6 +32,7 @@ const Fund = () => {
 
   return (
     <div className="fund">
+      <h1>{fund.name}</h1>
       {fund ? (
         <FundTable
           companies={companies}

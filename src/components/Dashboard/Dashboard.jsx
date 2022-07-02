@@ -20,10 +20,12 @@ const Dashboard = () => {
     <ul className="dashboard">
       {funds &&
         funds.map(({ id, name }, index) => {
-          const pathWithId = `/fund/${id}`;
+          const path = `/fund/${id}`;
           return (
             <li key={index} className="dashboard__item">
-              <Link to={pathWithId}>{name}</Link>
+              <Link to={path}>
+                <h2>{name}</h2>
+              </Link>
             </li>
           );
         })}

@@ -1,3 +1,13 @@
+.fund-table {
+  background: linear-gradient(45deg, #668fc7, #8e58b1);
+}
+
+.fund-table__container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Below table classes would be nested if using CSS preprocessor */
 .fund-table thead {
   background-color: #4f598b;
 }
@@ -12,6 +22,6 @@ tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.fund-table {
-  background: linear-gradient(45deg, #668fc7, #8e58b1);
+.fund-table__img {
+  width: 100px
 }
