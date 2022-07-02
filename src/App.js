@@ -1,14 +1,22 @@
 import React from "react";
-import logo from "./images/logo.png";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Fund from "./components/Fund/Fund";
+import Company from "./components/Company/Company";
+import Dashboard from "./components/Dashboard/Dashboard";
+import NavBar from "./components/NavBar/NavBar";
 
-function App() {
+const App = () => {
   return (
     <div style={{ textAlign: "center" }}>
-      <img src={logo} alt="Aumni Logo" />
-      <h1>Aumni Frontend Coding Challenge</h1>
+      <NavBar />
+      <Routes>
+        <Route element={<Company />} path="/fund/:fundId/company/:companyId" />
+        <Route element={<Fund />} path="/fund/:fundId" />
+        <Route element={<Dashboard />} path="/fund" />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
