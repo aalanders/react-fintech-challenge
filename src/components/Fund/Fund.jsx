@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import { useParams } from "react-router-dom";
 
 const Fund = () => {
-  return (
-    <div>Fund</div>
-  )
-}
+  const { fundId } = useParams();
 
-export default Fund
+  return <div>Fund Id: {fundId}</div>;
+};
+
+export default Fund;

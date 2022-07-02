@@ -1,0 +1,9 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__item {
+  padding: 20px;
+  list-style-type: none;
+}

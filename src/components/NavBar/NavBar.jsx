@@ -1,11 +1,17 @@
 import React from "react";
+import "./NavBar.css";
 import logo from "../../images/logo.png";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  return <div>
-     <img src={logo} alt="Aumni Logo" />
-    <h1>Aumni Frontend Coding Challenge</h1>
-  </div>;
+  return (
+    <div className="nav-bar">
+      <img className="nav-bar__img" src={logo} alt="Aumni Logo" />
+      <div className="nav-bar__link-container">
+        <Link to="/">View all Funds</Link>
+      </div>
+    </div>
+  );
 };
 
 export default NavBar;
