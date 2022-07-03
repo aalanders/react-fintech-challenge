@@ -17,32 +17,44 @@ const TABLE_HEADERS = [
 
 const Fund = () => {
   const [fund, setFund] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
   const { fundId } = useParams();
   const { companies } = fund;
 
   useEffect(() => {
+    setIsLoading(true);
     const getFund = async () => {
       // This would be a fetch to the BE service using the fundId, so FE wouldn't have to filter
       const filteredFund = MOCK_DATA.filter(({ id }) => id === Number(fundId));
       setFund(filteredFund[0]);
     };
 
-    getFund().catch(console.error);
+    getFund()
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch(console.error);
   }, [fundId]);
 
   return (
-    <div className="fund">
-      <h1>{fund.name}</h1>
-      {fund ? (
-        <FundTable
-          companies={companies}
-          fundId={fundId}
-          tableHeaders={TABLE_HEADERS}
-        />
+    <>
+      {isLoading ? (
+        <span>Loading...</span>
       ) : (
-        <p>This fund has no companies.</p>
+        <div className="fund">
+          <h1 className="fund__name">{fund.name}</h1>
+          {fund ? (
+            <FundTable
+              companies={companies}
+              fundId={fundId}
+              tableHeaders={TABLE_HEADERS}
+            />
+          ) : (
+            <p>This fund has no companies.</p>
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

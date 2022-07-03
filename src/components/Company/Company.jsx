@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import { useLocation } from "react-router-dom";
 
 const Company = () => {
-  return (
-    <div>Company</div>
-  )
-}
+  const { state } = useLocation();
+  const { company } = state || {};
 
-export default Company
+  return <img alt="logo" src={company.logo} />;
+};
+
+export default Company;
