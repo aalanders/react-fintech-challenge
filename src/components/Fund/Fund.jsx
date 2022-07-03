@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import FundTable from "../FundTable/FundTable";
+import FundChart from "../FundChart/FundChart";
+import Button from "react-bootstrap/Button";
 import "./Fund.css";
 
 const MOCK_DATA = require("../../mocks/funds.json");
@@ -18,6 +20,8 @@ const TABLE_HEADERS = [
 const Fund = () => {
   const [fund, setFund] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [toggleChart, setToggleChart] = useState(false);
+
   const { fundId } = useParams();
   const { companies } = fund;
 
@@ -37,24 +41,38 @@ const Fund = () => {
   }, [fundId]);
 
   return (
-    <>
+    <div className="fund">
       {isLoading ? (
         <span>Loading...</span>
       ) : (
-        <div className="fund">
+        <>
           <h1 className="fund__name">{fund.name}</h1>
+          <Button
+            type="button"
+            variant="outline-primary"
+            className="fund__button"
+            onClick={() => setToggleChart(!toggleChart)}
+          >
+            {toggleChart ? "View Table" : "View Graphs"}
+          </Button>
           {fund ? (
-            <FundTable
-              companies={companies}
-              fundId={fundId}
-              tableHeaders={TABLE_HEADERS}
-            />
+            <div className="fund__data">
+              {toggleChart ? (
+                <FundChart companies={companies} field="cost" />
+              ) : (
+                <FundTable
+                  companies={companies}
+                  fundId={fundId}
+                  tableHeaders={TABLE_HEADERS}
+                />
+              )}
+            </div>
           ) : (
             <p>This fund has no companies.</p>
           )}
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 };
 

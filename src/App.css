@@ -4,16 +4,15 @@
   border: 0;
 }
 
-body {
+body #root {
   font: 14px  "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
-  color: rgb(0, 0, 0, 1);
 }
 
-a {
+body a {
   text-decoration: none;
   color: rgb(0, 0, 0, 1);
 }
 
-a:hover {
+body a:hover {
   color: rgb(70, 90, 111);
 }

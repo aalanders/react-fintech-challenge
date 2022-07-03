@@ -5,6 +5,7 @@ import Fund from "./components/Fund/Fund";
 import Company from "./components/Company/Company";
 import Dashboard from "./components/Dashboard/Dashboard";
 import NavBar from "./components/NavBar/NavBar";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

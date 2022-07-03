@@ -1,5 +1,5 @@
 .fund-table {
-  background: linear-gradient(45deg, #668fc7, #8e58b1);
+  background: linear-gradient(45deg, #5696ef, #8e58b1);
 }
 
 .fund-table__container {
@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-/* Below table classes would be nested if using CSS preprocessor */
+/* Classes could be nested if using CSS preprocessor */
 .fund-table thead {
   background-color: #4f598b;
 }
