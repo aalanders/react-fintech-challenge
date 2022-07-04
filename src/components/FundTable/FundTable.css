@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-/* Classes could be nested if using CSS preprocessor */
+/* Note: Classes could be nested if using CSS preprocessor, see TODO in code-challenge-notes */
 .fund-table thead {
   background-color: #4f598b;
 }

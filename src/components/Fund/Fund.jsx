@@ -7,9 +7,9 @@ import "./Fund.css";
 
 const MOCK_DATA = require("../../mocks/funds.json");
 
-// Header fields would usually be data-driven by BE, for now putting in as static fields
+// Header fields would be data-driven by BE, static fields for now
 const TABLE_HEADERS = [
-  "Name",
+  "Company",
   "Cost",
   "Ownership Percentage",
   "Implied Value",
@@ -26,7 +26,7 @@ const Fund = () => {
 
   useEffect(() => {
     const getFund = async () => {
-      // This route would also do fetch to the BE service using the fundId, so FE wouldn't have to filter
+      // This route would fetch from the BE service using the fundId, so FE wouldn't have to filter
       const filteredFund = MOCK_DATA.filter(({ id }) => id === Number(fundId));
       setFund(filteredFund[0]);
     };
@@ -50,7 +50,7 @@ const Fund = () => {
         {fund ? (
           <div className="fund__data">
             {toggleChart ? (
-              <FundChart companies={companies} field="cost" />
+              <FundChart companies={companies} />
             ) : (
               <FundTable
                 companies={companies}

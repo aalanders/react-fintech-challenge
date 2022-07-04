@@ -12,7 +12,7 @@ import {
 const FundTable = ({ companies, fundId, tableHeaders }) => {
   let navigate = useNavigate();
 
-  function handleRowClick(company) {
+  function navigateToCompany(company) {
     let { id } = company;
     navigate(`/fund/${fundId}/company/${id}`, { state: { company } });
   }
@@ -31,7 +31,7 @@ const FundTable = ({ companies, fundId, tableHeaders }) => {
         <tbody>
           {companies ? (
             companies.map((company, index) => (
-              <tr key={index} onClick={() => handleRowClick(company)}>
+              <tr key={index} onClick={() => navigateToCompany(company)}>
                 <td>
                   <img
                     className="fund-table__img"

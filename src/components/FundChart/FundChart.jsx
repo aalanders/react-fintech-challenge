@@ -12,8 +12,11 @@ import {
 
 const WIDTH_MD = 600;
 const HEIGHT_MD = 150;
+const Y_AXIS_WIDTH_MD = 80;
 
 const FundChart = ({ companies }) => {
+  // Note: With more time, I would format the data in the BarCharts
+  // to be more readable, see TODOs in code-challenge-notes
   return (
     <div className="fund-chart" data-testid="fund-chart">
       <BarChart
@@ -24,7 +27,7 @@ const FundChart = ({ companies }) => {
       >
         <CartesianGrid vertical={false} />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis width={Y_AXIS_WIDTH_MD} />
         <Tooltip />
         <Legend />
         <Bar dataKey="cost" fill="#8884d8" name="Cost" />
@@ -37,7 +40,7 @@ const FundChart = ({ companies }) => {
       >
         <CartesianGrid vertical={false} />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis width={Y_AXIS_WIDTH_MD} />
         <Tooltip />
         <Legend />
         <Bar
@@ -54,7 +57,7 @@ const FundChart = ({ companies }) => {
       >
         <CartesianGrid vertical={false} />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis width={Y_AXIS_WIDTH_MD} />
         <Tooltip />
         <Legend />
         <Bar dataKey="impliedValue" fill="#344ceb" name="Implied Value" />
