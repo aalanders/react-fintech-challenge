@@ -1838,10 +1838,10 @@
     "lz-string" "^1.4.4"
     "pretty-format" "^27.0.2"
 
-"@testing-library/jest-dom@^5.16.0":
-  "integrity" "sha512-ajUJdfDIuTCadB79ukO+0l8O+QwN0LiSxDaYUTI4LndbbUsGi6rWU1SCexXzBA2NSjlVB9/vbkasQIL3tmPBjw=="
-  "resolved" "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-5.16.1.tgz"
-  "version" "5.16.1"
+"@testing-library/jest-dom@^5.16.4":
+  "integrity" "sha512-Gy+IoFutbMQcky0k+bqqumXZ1cTGswLsFqmNLzNdSKkU9KGV2u9oXhukCbbJ9/LRPKiqwxEE8VpV/+YZlfkPUA=="
+  "resolved" "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-5.16.4.tgz"
+  "version" "5.16.4"
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@types/testing-library__jest-dom" "^5.9.1"
@@ -1861,12 +1861,10 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^8.0.0"
 
-"@testing-library/user-event@^13.5.0":
-  "integrity" "sha512-5Kwtbo3Y/NowpkbRuSepbyMFkZmHgD+vPzYB/RJ4oxt5Gj/avFFBYjhw27cqSVPVw/3a67NK1PbiIr9k4Gwmdg=="
-  "resolved" "https://registry.npmjs.org/@testing-library/user-event/-/user-event-13.5.0.tgz"
-  "version" "13.5.0"
-  dependencies:
-    "@babel/runtime" "^7.12.5"
+"@testing-library/user-event@^14.2.1":
+  "integrity" "sha512-HOr1QiODrq+0j9lKU5i10y9TbhxMBMRMGimNx10asdmau9cb8Xb1Vyg0GvTwyIL2ziQyh2kAloOtAQFBQVuecA=="
+  "resolved" "https://registry.npmjs.org/@testing-library/user-event/-/user-event-14.2.1.tgz"
+  "version" "14.2.1"
 
 "@tootallnate/once@1":
   "integrity" "sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw=="

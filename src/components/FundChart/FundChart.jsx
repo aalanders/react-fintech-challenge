@@ -15,8 +15,13 @@ const HEIGHT_MD = 150;
 
 const FundChart = ({ companies }) => {
   return (
-    <div className="fund-chart">
-      <BarChart width={WIDTH_MD} height={HEIGHT_MD} data={companies}>
+    <div className="fund-chart" data-testid="fund-chart">
+      <BarChart
+        className="fund-chart__bar-chart"
+        width={WIDTH_MD}
+        height={HEIGHT_MD}
+        data={companies}
+      >
         <CartesianGrid vertical={false} />
         <XAxis dataKey="name" />
         <YAxis />
@@ -24,7 +29,12 @@ const FundChart = ({ companies }) => {
         <Legend />
         <Bar dataKey="cost" fill="#8884d8" name="Cost" />
       </BarChart>
-      <BarChart width={WIDTH_MD} height={HEIGHT_MD} data={companies}>
+      <BarChart
+        className="fund-chart__bar-chart"
+        width={WIDTH_MD}
+        height={HEIGHT_MD}
+        data={companies}
+      >
         <CartesianGrid vertical={false} />
         <XAxis dataKey="name" />
         <YAxis />
@@ -36,7 +46,12 @@ const FundChart = ({ companies }) => {
           name="Ownership Percentage"
         />
       </BarChart>
-      <BarChart width={WIDTH_MD} height={HEIGHT_MD} data={companies}>
+      <BarChart
+        className="fund-chart__bar-chart"
+        width={WIDTH_MD}
+        height={HEIGHT_MD}
+        data={companies}
+      >
         <CartesianGrid vertical={false} />
         <XAxis dataKey="name" />
         <YAxis />

@@ -6,42 +6,30 @@ const MOCK_DATA = require("../../mocks/funds.json");
 
 const Dashboard = () => {
   const [funds, setFunds] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
     const getAllFunds = async () => {
       // Fetch to get data from BE would occur here and return Promise
       setFunds(MOCK_DATA);
     };
 
-    getAllFunds()
-      .then(() => {
-        setIsLoading(false);
-      })
-      .catch(console.error);
+    getAllFunds().catch(console.error);
   }, []);
 
   return (
-    <>
-      {isLoading ? (
-        <span>Loading...</span>
-      ) : (
-        <ul className="dashboard">
-          {funds &&
-            funds.map(({ id, name }, index) => {
-              const path = `/fund/${id}`;
-              return (
-                <li key={index} className="dashboard__item">
-                  <Link to={path}>
-                    <h2>{name}</h2>
-                  </Link>
-                </li>
-              );
-            })}
-        </ul>
-      )}
-    </>
+    <ul className="dashboard" data-testid="dashboard">
+      {funds &&
+        funds.map((fund, index) => {
+          const path = `/fund/${fund.id}`;
+          return (
+            <li key={index} className="dashboard__item">
+              <Link to={path} state={fund}>
+                <h2>{fund.name}</h2>
+              </Link>
+            </li>
+          );
+        })}
+    </ul>
   );
 };
 

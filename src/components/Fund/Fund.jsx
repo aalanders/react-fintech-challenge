@@ -19,60 +19,51 @@ const TABLE_HEADERS = [
 
 const Fund = () => {
   const [fund, setFund] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
   const [toggleChart, setToggleChart] = useState(false);
 
   const { fundId } = useParams();
-  const { companies } = fund;
+  const { companies } = fund || {};
 
   useEffect(() => {
-    setIsLoading(true);
     const getFund = async () => {
-      // This would be a fetch to the BE service using the fundId, so FE wouldn't have to filter
+      // This route would also do fetch to the BE service using the fundId, so FE wouldn't have to filter
       const filteredFund = MOCK_DATA.filter(({ id }) => id === Number(fundId));
       setFund(filteredFund[0]);
     };
 
-    getFund()
-      .then(() => {
-        setIsLoading(false);
-      })
-      .catch(console.error);
+    getFund().catch(console.error);
   }, [fundId]);
 
   return (
-    <div className="fund">
-      {isLoading ? (
-        <span>Loading...</span>
-      ) : (
-        <>
-          <h1 className="fund__name">{fund.name}</h1>
-          <Button
-            type="button"
-            variant="outline-primary"
-            className="fund__button"
-            onClick={() => setToggleChart(!toggleChart)}
-          >
-            {toggleChart ? "View Table" : "View Graphs"}
-          </Button>
-          {fund ? (
-            <div className="fund__data">
-              {toggleChart ? (
-                <FundChart companies={companies} field="cost" />
-              ) : (
-                <FundTable
-                  companies={companies}
-                  fundId={fundId}
-                  tableHeaders={TABLE_HEADERS}
-                />
-              )}
-            </div>
-          ) : (
-            <p>This fund has no companies.</p>
-          )}
-        </>
-      )}
-    </div>
+    fund && (
+      <div className="fund" data-testid="fund">
+        <h1 className="fund__name">{fund.name}</h1>
+        <Button
+          type="button"
+          variant="outline-primary"
+          className="fund__button"
+          data-testid="toggle-button"
+          onClick={() => setToggleChart(!toggleChart)}
+        >
+          {toggleChart ? "View Table" : "View Graphs"}
+        </Button>
+        {fund ? (
+          <div className="fund__data">
+            {toggleChart ? (
+              <FundChart companies={companies} field="cost" />
+            ) : (
+              <FundTable
+                companies={companies}
+                fundId={fundId}
+                tableHeaders={TABLE_HEADERS}
+              />
+            )}
+          </div>
+        ) : (
+          <p>This fund has no companies.</p>
+        )}
+      </div>
+    )
   );
 };
 

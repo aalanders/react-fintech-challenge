@@ -18,7 +18,7 @@ const FundTable = ({ companies, fundId, tableHeaders }) => {
   }
 
   return (
-    <div className="fund-table__container">
+    <div className="fund-table__container" data-testid="fund-table">
       <Table responsive hover className="fund-table">
         <thead>
           <tr>

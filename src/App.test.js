@@ -1,9 +1,12 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import App from "./App";
+import { renderWithRouter } from "./test-utils/render-utils";
 
-test("renders learn react link", () => {
-  const { getByText } = render(<App />);
-  const headerElement = getByText(/Aumni Frontend Coding Challenge/i);
-  expect(headerElement).toBeInTheDocument();
+test("renders App", () => {
+  renderWithRouter(<App />);
+
+  expect(screen.getByTestId("nav-bar")).toBeInTheDocument();
+  expect(screen.getByRole("img")).toBeInTheDocument();
+  expect(screen.getByTestId("dashboard")).toBeInTheDocument();
 });

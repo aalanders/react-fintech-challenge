@@ -1,3 +1,9 @@
 .fund-chart {
   padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fund-chart__bar-chart {
+  margin-bottom: 20px;
 }
