@@ -8,7 +8,6 @@ const Company = () => {
 
   return (
     <>
-      <img alt="logo" src={company.logo} />
       <p className="fund__name">
         {company.name}: {company.description}
       </p>

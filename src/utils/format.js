@@ -1,4 +1,5 @@
 export const calculateMultiple = (impliedValue, cost) => {
+  if (!cost) return 0;
   return Math.floor(impliedValue / cost);
 };
 

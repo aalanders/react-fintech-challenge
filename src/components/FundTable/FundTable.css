@@ -21,7 +21,3 @@ td {
 tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
-
-.fund-table__img {
-  width: 100px
-}

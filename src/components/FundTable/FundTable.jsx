@@ -23,22 +23,14 @@ const FundTable = ({ companies, fundId, tableHeaders }) => {
         <thead>
           <tr>
             {tableHeaders &&
-              tableHeaders.map((heading, index) => (
-                <th key={index}>{heading}</th>
-              ))}
+              tableHeaders.map((heading) => <th key={heading}>{heading}</th>)}
           </tr>
         </thead>
         <tbody>
           {companies ? (
-            companies.map((company, index) => (
-              <tr key={index} onClick={() => navigateToCompany(company)}>
-                <td>
-                  <img
-                    className="fund-table__img"
-                    alt="company logo"
-                    src={company.logo}
-                  />
-                </td>
+            companies.map((company) => (
+              <tr key={company.id} onClick={() => navigateToCompany(company)}>
+                <td>{company.name}</td>
                 <td>{formatToUSD(company.cost)}</td>
                 <td>{convertToPercent(company.ownershipPercentage)}%</td>
                 <td>{formatToUSD(company.impliedValue)}</td>

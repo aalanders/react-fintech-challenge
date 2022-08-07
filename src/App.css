@@ -1,8 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
+/* DEFAULT STYLING ALWAYS */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
+
+body { 
+  margin: 0;
+}
+/* END DEFAULT */
 
 body #root {
   font: 14px  "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
